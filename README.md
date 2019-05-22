@@ -24,10 +24,10 @@ The extensions provides configration for
 * Show characters instead password dots (default: off) 
 * Number of words required (default 3)
 * Min/Max length for each word required (default min. 4 / max. 20)
-* RegExp pattern for each word (default enable all)
 * Insert a separator character bewteen each word (default none)
-* Whitespace stripping enabled/disabled (default off)
-* Autojumping to next input on typing / to previous input on backspace (default off)
+* RegExp pattern for each word (default enable all) (**tbd**)
+* Whitespace stripping enabled/disabled (default off) (**tbd**)
+* Autojumping to next input on typing / to previous input on backspace (default off) (**tbd**)
 
 A full example would therefore look like the following:
 
@@ -52,6 +52,18 @@ Note that when using `separator` (example `-`) the password will be like the fol
 However, the more powerful feature of the separator is to split the the password by the given char into an array and send the word array to the server, which can use it's own separator to build the "real" passwords for creating accounts or logging in.
 
 This feature is introduced to avoid this extension to be focused around an array of words but keeping it as simple and low-throwshold as possible.
+
+## Run the examples
+
+To run the examples locally, clone this project and cd into the `example` folder and use the npm sript to start:
+
+```bash
+$ git clone git@github.com:jankapunkt/meteor-autoform-passwordmix.git
+$ cd example
+$ meteor npm run start
+```
+
+If you don't use the start script it won't use your latest changes of the `packages` folder.
 
 ## License
 

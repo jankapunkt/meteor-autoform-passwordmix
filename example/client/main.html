@@ -1,25 +1,23 @@
 <head>
-  <title>example</title>
+  <title>Meteor AutoForm Passwordmix</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+<div class="container-fluid p-0">
+    <div class="jumbotron">
+        <h1 class="text-center">Meteor AutoForm Passwordmix</h1>
+    </div>
+</div>
+<div class="container">
+<div class="row">
+    <div class="col">
+        {{> quickForm id="wordsForm" schema=wordsFormSchema type="normal"}}
 
-  {{> hello}}
-  {{> info}}
+        <textarea class="form-control" rows="5" readonly>{{passwordDoc}}</textarea>
+    </div>
+    <div class="col">
+        {{> quickForm id="configForm" schema=configFormSchema type="normal"}}
+    </div>
+</div>
+</div>
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
-</template>
