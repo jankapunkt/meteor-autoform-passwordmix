@@ -1,4 +1,10 @@
-# meteor-autoform-passwordmix
+# Meteor Autoform Passwordmix
+
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
+Check out the DEMO!
+
 Configurable extension to provide a password input that consists of a mix of random words.
 
 Instead of forcing users to enter complex password pattern you can now provide an input for multiple words, which increases password length and uniqueness.
