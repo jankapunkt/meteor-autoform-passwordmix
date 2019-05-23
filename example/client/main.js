@@ -17,8 +17,8 @@ const defaultConfig = {
   words: 3,
   min: 4,
   max: 20,
-  regExp: /^[a-z0-9A-Z_@-\\!\\?\\.]$/,
-  whitespace: false,
+  regExp: '^[a-z0-9A-Z]+$',
+  whitespace: true,
   separator: '-',
   jump: true,
   show: true
@@ -28,45 +28,42 @@ const configFormSchema = Schema.create({
   words: {
     type: Number,
     min: 1,
-    defaultValue: 3
+    defaultValue: defaultConfig.words
   },
   min: {
     type: Number,
     min: 1,
-    defaultValue: 4
+    defaultValue: defaultConfig.min
   },
   max: {
     type: Number,
     min: 1,
-    defaultValue: 20
+    defaultValue: defaultConfig.max
   },
   separator: {
     type: String,
     optional: true,
-    defaultValue: '-'
+    defaultValue: defaultConfig.separator
   },
   regExp: {
     type: String,
     optional: true,
-    autoform: { disabled: true },
-    defaultValue: '/^[a-z0-9A-Z_@-\\\\!\\\\?\\\\.]$/'
+    defaultValue: defaultConfig.regExp
   },
   whitespace: {
     type: Boolean,
     optional: true,
-    defaultValue: true,
-    autoform: { disabled: true }
+    defaultValue: defaultConfig.whitespace
   },
   jump: {
     type: Boolean,
     optional: true,
-    defaultValue: true,
-    autoform: { disabled: true }
+    defaultValue: defaultConfig.jump
   },
   show: {
     type: Boolean,
     optional: true,
-    defaultValue: true
+    defaultValue: defaultConfig.show
   }
 })
 Template.body.onCreated(function () {
