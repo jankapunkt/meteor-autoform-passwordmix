@@ -1,7 +1,7 @@
 /* eslint-env meteor */
 Package.describe({
   name: 'jkuester:autoform-passwordmix',
-  version: '1.0.0',
+  version: '1.1.0',
   // Brief, one-line summary of the package.
   summary: 'Configurable extension to provide a password input that consists of a mix of random words.',
   // URL to the Git repository containing the source code for this package.
