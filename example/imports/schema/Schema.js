@@ -28,7 +28,6 @@ export const Schema = {
     }
     return {
       password: password,
-      confirm: password
     }
   }
 }
