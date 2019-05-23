@@ -72,7 +72,7 @@ Template.afPasswordmix.events({
     const instanceId = templateInstance.data.atts.id
     const state = templateInstance.state.get(instanceId)
     const { whitespace } = state
-    const regExp = state.regExp && new RegExp(state.regExp, 'g')
+    const regExp = state.regExp && new RegExp(  state.regExp, 'g')
 
     switch (event.key) {
       case 'Backspace':
@@ -84,7 +84,6 @@ Template.afPasswordmix.events({
         return !whitespace
       default:
         if (regExp) {
-          //console.log(event.key, regExp.toString(), regExp.test(event))
           return regExp.test(event.key)
         } else {
           return true
@@ -95,6 +94,7 @@ Template.afPasswordmix.events({
     const instanceId = templateInstance.data.atts.id
     const state = templateInstance.state.get(instanceId)
     const { paste } = state
+
     if (!paste) {
       event.preventDefault()
       event.stopPropagation()
@@ -106,15 +106,15 @@ Template.afPasswordmix.events({
   },
 })
 
-function assignError ($target) {
+function assignError ($target, invalid) {
+  if (!invalid) return
   $target.removeClass('border-success')
   $target.addClass('border border-danger')
-  return false
 }
 
-function clearError ($target) {
+function clearError ($target, invalid) {
+  if (!invalid) return
   $target.removeClass('border-danger')
-  $target.addClass('border border-success')
 }
 
 function updateWords (templateInstance) {
@@ -142,14 +142,12 @@ function updateWords (templateInstance) {
     // (i.e. when whitespace has been pasted)
     if (min && currentWord.length < min) {
       allChecksPassed = false
-      if (invalid) assignError($current)
+      assignError($current, invalid)
     } else if (max && currentWord.length > max) {
       allChecksPassed = false
-      if (invalid) assignError($current)
+      assignError($current, invalid)
     } else {
-      if (invalid) {
-        clearError($current)
-      }
+      clearError($current, invalid)
     }
 
     words[ index ] = currentWord
