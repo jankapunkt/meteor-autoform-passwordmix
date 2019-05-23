@@ -27,6 +27,7 @@ Template.afPasswordmix.onCreated(function () {
     const { regExp } = atts
     const { separator } = atts
     const { inputClass } = atts
+    const paste = atts.paste || false
     const invalid = atts.class && atts.class.indexOf('invalid') > -1
     const inputAtts = {
       maxlength: atts.max,
@@ -38,7 +39,7 @@ Template.afPasswordmix.onCreated(function () {
       separator
     }
     const iterator = Array.from({ length: words }).map(x => state)
-    instance.state.set(atts.id, { words, inputAtts, jump, whitespace, regExp, iterator, separator, invalid })
+    instance.state.set(atts.id, { words, inputAtts, jump, whitespace, regExp, iterator, separator, invalid, paste })
   })
 })
 
@@ -74,7 +75,7 @@ Template.afPasswordmix.events({
     const { whitespace } = state
     const regExp = state.regExp && new RegExp(state.regExp, 'g')
 
-    switch(event.key) {
+    switch (event.key) {
       case 'Backspace':
       case 'Tab':
       case 'Enter':
@@ -89,6 +90,16 @@ Template.afPasswordmix.events({
         } else {
           return true
         }
+    }
+  },
+  'paste' (event, templateInstance) {
+    const instanceId = templateInstance.data.atts.id
+    const state = templateInstance.state.get(instanceId)
+    const { paste } = state
+    if (!paste) {
+      event.preventDefault()
+      event.stopPropagation()
+      return
     }
   },
   'blur .afPasswordmix-inputField' (event, templateInstance) {
@@ -106,11 +117,11 @@ Template.afPasswordmix.events({
     const words = []
     words.length = $inputs.length
 
-    let allCheckspassed = true
+    let allChecksPassed = true
     $inputs.each(function (index, value) {
       // TODO check if $.each cann be aborted like using break
       // TODO for example using the Array.every method
-      if (!allCheckspassed) return
+      if (!allChecksPassed) return
       const $target = templateInstance.$(value)
       const currentWord = $target.val() || ''
 
@@ -120,32 +131,35 @@ Template.afPasswordmix.events({
       // check whitespace if present
       // (i.e. when whitespace has been pasted)
       if (min && currentWord.length < min) {
-        assignError($current)
-        allCheckspassed = false
-      } else if (max && currentWord.length > max) {
-        assignError($current)
-        allCheckspassed = false
-      } else if (regExp && !regExp.test(currentWord)) {
-        assignError($current)
-        allCheckspassed = false
-      } else if (whiteSpaceRegExp.test()) {
-        assignError($current)
-        allCheckspassed = false
-      } else {
-        words[ index ] = currentWord
+        allChecksPassed = false
+        return assignError($current)
       }
+      if (max && currentWord.length > max) {
+        allChecksPassed = false
+        return assignError($current)
+      }
+      if (regExp && !regExp.test(currentWord)) {
+        allChecksPassed = false
+        return assignError($current)
+      }
+      if (whiteSpaceRegExp.test(currentWord)) {
+        allChecksPassed = false
+        return assignError($current)
+      }
+
+      words[ index ] = currentWord
     })
 
     // If all inputs have passed min / max / regExp / whiteSpace checks
     // we can safely update the hidden input. Otherwise we flush it, so
     // we can ensure, that the internal validation is "passed on" to
     // the overall form validation.
-    const finalWords = allCheckspassed ? words.join(separator || '') : ''
+    const finalWords = allChecksPassed ? words.join(separator || '') : ''
     templateInstance.$('.afPasswordmix-hiddenInput').val(finalWords)
   }
 })
 
-function assignError ($target, ) {
+function assignError ($target) {
   $target.addClass('border border-danger')
 }
 
