@@ -1,4 +1,4 @@
-/* global AutoForm */
+/* global AutoForm $ */
 import { Template } from 'meteor/templating'
 import { ReactiveDict } from 'meteor/reactive-dict'
 
@@ -21,13 +21,8 @@ Template.afPasswordmix.onCreated(function () {
   instance.autorun(() => {
     const data = Template.currentData()
     const { atts } = data
-    const { words } = atts
-    const { jump } = atts
-    const { whitespace } = atts
-    const { regExp } = atts
     const { separator } = atts
     const { inputClass } = atts
-    const paste = atts.paste || false
     const invalid = atts.class && atts.class.indexOf('invalid') > -1
     const inputAtts = {
       maxlength: atts.max,
@@ -38,8 +33,12 @@ Template.afPasswordmix.onCreated(function () {
     const state = {
       separator
     }
-    const iterator = Array.from({ length: words }).map(x => state)
-    instance.state.set(atts.id, { words, inputAtts, jump, whitespace, regExp, iterator, separator, invalid, paste })
+    const iterator = Array.from({ length: atts.words }).map(x => state)
+    instance.state.set(atts.id, Object.assign({}, atts, { inputAtts, invalid, iterator }))
+
+    if (invalid) {
+      updateWords(instance)
+    }
   })
 })
 
@@ -102,67 +101,64 @@ Template.afPasswordmix.events({
       return
     }
   },
-  'blur .afPasswordmix-inputField' (event, templateInstance) {
-    const instanceId = templateInstance.data.atts.id
-    const state = templateInstance.state.get(instanceId)
-    const { separator } = state
-    const { min } = state
-    const { max } = state
-    const { whitespace } = state
-    const regExp = state.regExp && new RegExp(state.regExp)
-
-    // get all inputs to run validation checks for all words
-    const $current = templateInstance.$(event.currentTarget)
-    const $inputs = templateInstance.$('.afPasswordmix-inputField')
-    const words = []
-    words.length = $inputs.length
-
-    let allChecksPassed = true
-    $inputs.each(function (index, value) {
-      // TODO check if $.each cann be aborted like using break
-      // TODO for example using the Array.every method
-      if (!allChecksPassed) return
-      const $target = templateInstance.$(value)
-      const currentWord = $target.val() || ''
-
-      // check min if present
-      // check max if present
-      // check regExp if present
-      // check whitespace if present
-      // (i.e. when whitespace has been pasted)
-      if (min && currentWord.length < min) {
-        allChecksPassed = false
-        return assignError($current)
-      }
-      if (max && currentWord.length > max) {
-        allChecksPassed = false
-        return assignError($current)
-      }
-      if (regExp && !regExp.test(currentWord)) {
-        allChecksPassed = false
-        return assignError($current)
-      }
-      if (whiteSpaceRegExp.test(currentWord)) {
-        allChecksPassed = false
-        return assignError($current)
-      }
-
-      words[ index ] = currentWord
-    })
-
-    // If all inputs have passed min / max / regExp / whiteSpace checks
-    // we can safely update the hidden input. Otherwise we flush it, so
-    // we can ensure, that the internal validation is "passed on" to
-    // the overall form validation.
-    const finalWords = allChecksPassed ? words.join(separator || '') : ''
-    templateInstance.$('.afPasswordmix-hiddenInput').val(finalWords)
-  }
+  'input .afPasswordmix-inputField' (event, templateInstance) {
+    updateWords(templateInstance)
+  },
 })
 
 function assignError ($target) {
+  $target.removeClass('border-success')
   $target.addClass('border border-danger')
+  return false
 }
 
-function updateWords ($targets, words, templateInstance) {
+function clearError ($target) {
+  $target.removeClass('border-danger')
+  $target.addClass('border border-success')
+}
 
+function updateWords (templateInstance) {
+  const instanceId = templateInstance.data.atts.id
+  const state = templateInstance.state.get(instanceId)
+  const { separator } = state
+  const { min } = state
+  const { max } = state
+  const { invalid } = state
+
+  // get all inputs to run validation checks for all words
+  const $inputs = templateInstance.$('.afPasswordmix-inputField')
+  const words = []
+  words.length = $inputs.length
+
+  let allChecksPassed = true
+  $inputs.each(function (index, value) {
+    const $current = templateInstance.$(value)
+    const currentWord = $current.val() || ''
+
+    // check min if present
+    // check max if present
+    // check regExp if present
+    // check whitespace if present
+    // (i.e. when whitespace has been pasted)
+    if (min && currentWord.length < min) {
+      allChecksPassed = false
+      if (invalid) assignError($current)
+    } else if (max && currentWord.length > max) {
+      allChecksPassed = false
+      if (invalid) assignError($current)
+    } else {
+      if (invalid) {
+        clearError($current)
+      }
+    }
+
+    words[ index ] = currentWord
+  })
+
+  // If all inputs have passed min / max / regExp / whiteSpace checks
+  // we can safely update the hidden input. Otherwise we flush it, so
+  // we can ensure, that the internal validation is "passed on" to
+  // the overall form validation.
+  const finalWords = allChecksPassed ? words.join(separator || '') : ''
+  templateInstance.$('.afPasswordmix-hiddenInput').val(finalWords)
 }
