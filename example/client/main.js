@@ -17,11 +17,12 @@ const defaultConfig = {
   words: 3,
   min: 4,
   max: 20,
-  regExp: '^[a-z0-9A-Z]+$',
-  whitespace: true,
+  regExp: '[a-z0-9A-Z]+',
   separator: '-',
+  whitespace: true,
   jump: true,
-  show: true
+  show: true,
+  paste: true,
 }
 
 const configFormSchema = Schema.create({
@@ -64,6 +65,11 @@ const configFormSchema = Schema.create({
     type: Boolean,
     optional: true,
     defaultValue: defaultConfig.show
+  },
+  paste: {
+    type: Boolean,
+    optional: true,
+    defaultValue: defaultConfig.paste
   }
 })
 Template.body.onCreated(function () {
@@ -83,8 +89,11 @@ Template.body.helpers({
   },
   passwordDoc () {
     const passwordDoc = Template.instance().state.get('passwordDoc')
-    console.log(passwordDoc)
     return passwordDoc && passwordDoc.password
+  },
+  confirmDoc () {
+    const passwordDoc = Template.instance().state.get('passwordDoc')
+    return passwordDoc && passwordDoc.confirm
   }
 })
 
