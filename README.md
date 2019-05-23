@@ -3,7 +3,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-Check out the DEMO!
+Check out the [DEMO](https://jankapunkt.github.io/meteor-autoform-passwordmix/)!
 
 Configurable extension to provide a password input that consists of a mix of random words.
 
