@@ -1,0 +1,1471 @@
+{
+  "minifier": {
+    "name": "standard-minifier-js",
+    "version": "2.4.1"
+  },
+  "totalMinifiedBytes": 1106995,
+  "totalMinifiedGzipBytes": 281951,
+  "minifiedBytesByPackage": {
+    "packages/meteor.js": 9484,
+    "packages/meteor-base.js": 31,
+    "packages/mobile-experience.js": 37,
+    "packages/modules-runtime.js": 4199,
+    "packages/modules.js": [
+      495656,
+      {
+        "node_modules": {
+          "meteor": {
+            "modules": {
+              "client.js": 124,
+              "css.js": 261,
+              "install-packages.js": 2121,
+              "process.js": 347,
+              "reify.js": 71,
+              "stubs.js": 97,
+              "node_modules": {
+                "reify": {
+                  "lib": {
+                    "runtime": {
+                      "index.js": 933,
+                      "utils.js": 1217,
+                      "entry.js": 3299
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "bootstrap": {
+            "dist": {
+              "css": {
+                "bootstrap.css": 154674
+              },
+              "js": {
+                "bootstrap.js": 60109
+              }
+            },
+            "package.json": 86
+          },
+          "jquery": {
+            "package.json": 80,
+            "dist": {
+              "jquery.js": 88058
+            }
+          },
+          "popper.js": {
+            "package.json": 88,
+            "dist": {
+              "umd": {
+                "popper.js": 21129
+              }
+            }
+          },
+          "simpl-schema": {
+            "package.json": 86,
+            "dist": {
+              "main.js": 210,
+              "SimpleSchema.js": 16053,
+              "humanize.js": 570,
+              "ValidationContext.js": 3548,
+              "doValidation.js": 4384,
+              "utility": {
+                "index.js": 1181,
+                "appendAffectedKey.js": 136,
+                "dateToDateString.js": 217,
+                "forEachKeyAncestor.js": 213,
+                "getKeysWithValueInObj.js": 257,
+                "getLastPartOfKey.js": 201,
+                "getParentOfKey.js": 170,
+                "isObjectWeShouldTraverse.js": 525,
+                "looksLikeModifier.js": 177
+              },
+              "validation": {
+                "typeValidator": {
+                  "index.js": 1006,
+                  "doDateChecks.js": 521,
+                  "doNumberChecks.js": 789,
+                  "doStringChecks.js": 738,
+                  "doArrayChecks.js": 434
+                },
+                "requiredValidator.js": 762,
+                "allowedValuesValidator.js": 439
+              },
+              "SimpleSchemaGroup.js": 1250,
+              "regExp.js": 1939,
+              "clean.js": 2736,
+              "clean": {
+                "convertToProperType.js": 959,
+                "setAutoValues.js": 785,
+                "getPositionsForAutoValue.js": 1310,
+                "AutoValueRunner.js": 2202
+              },
+              "expandShorthand.js": 860,
+              "defaultMessages.js": 1874
+            }
+          },
+          "clone": {
+            "package.json": 73,
+            "clone.js": 2369
+          },
+          "lodash.every": {
+            "package.json": 64,
+            "index.js": 12255
+          },
+          "extend": {
+            "package.json": 71,
+            "index.js": 1164
+          },
+          "lodash.includes": {
+            "package.json": 67,
+            "index.js": 2496
+          },
+          "lodash.isempty": {
+            "package.json": 66,
+            "index.js": 2648
+          },
+          "message-box": {
+            "package.json": 91,
+            "dist": {
+              "MessageBox.js": 3172
+            }
+          },
+          "lodash": {
+            "merge.js": 106,
+            "_baseMerge.js": 329,
+            "_Stack.js": 307,
+            "_ListCache.js": 348,
+            "_listCacheClear.js": 70,
+            "_listCacheDelete.js": 194,
+            "_assocIndexOf.js": 118,
+            "eq.js": 69,
+            "_listCacheGet.js": 124,
+            "_listCacheHas.js": 98,
+            "_listCacheSet.js": 154,
+            "_stackClear.js": 97,
+            "_stackDelete.js": 102,
+            "_stackGet.js": 70,
+            "_stackHas.js": 70,
+            "_stackSet.js": 293,
+            "_Map.js": 76,
+            "_getNative.js": 124,
+            "_baseIsNative.js": 420,
+            "isFunction.js": 243,
+            "_baseGetTag.js": 232,
+            "_Symbol.js": 56,
+            "_root.js": 145,
+            "_freeGlobal.js": 78,
+            "_getRawTag.js": 250,
+            "_objectToString.js": 93,
+            "isObject.js": 102,
+            "_isMasked.js": 161,
+            "_coreJsData.js": 71,
+            "_toSource.js": 157,
+            "_getValue.js": 71,
+            "_MapCache.js": 343,
+            "_mapCacheClear.js": 160,
+            "_Hash.js": 323,
+            "_hashClear.js": 107,
+            "_nativeCreate.js": 71,
+            "_hashDelete.js": 111,
+            "_hashGet.js": 225,
+            "_hashHas.js": 160,
+            "_hashSet.js": 183,
+            "_mapCacheDelete.js": 119,
+            "_getMapData.js": 141,
+            "_isKeyable.js": 140,
+            "_mapCacheGet.js": 91,
+            "_mapCacheHas.js": 91,
+            "_mapCacheSet.js": 142,
+            "_assignMergeValue.js": 144,
+            "_baseAssignValue.js": 159,
+            "_defineProperty.js": 137,
+            "_baseFor.js": 60,
+            "_createBaseFor.js": 167,
+            "_baseMergeDeep.js": 710,
+            "_cloneBuffer.js": 294,
+            "_cloneTypedArray.js": 154,
+            "_cloneArrayBuffer.js": 137,
+            "_Uint8Array.js": 60,
+            "_copyArray.js": 110,
+            "_initCloneObject.js": 168,
+            "_baseCreate.js": 205,
+            "_getPrototype.js": 82,
+            "_overArg.js": 79,
+            "_isPrototype.js": 140,
+            "isArguments.js": 247,
+            "_baseIsArguments.js": 133,
+            "isObjectLike.js": 77,
+            "isArray.js": 48,
+            "isArrayLikeObject.js": 107,
+            "isArrayLike.js": 119,
+            "isLength.js": 110,
+            "isBuffer.js": 215,
+            "stubFalse.js": 50,
+            "isPlainObject.js": 382,
+            "isTypedArray.js": 129,
+            "_baseIsTypedArray.js": 804,
+            "_baseUnary.js": 74,
+            "_nodeUtil.js": 285,
+            "_safeGet.js": 74,
+            "toPlainObject.js": 100,
+            "_copyObject.js": 242,
+            "_assignValue.js": 187,
+            "keysIn.js": 137,
+            "_arrayLikeKeys.js": 467,
+            "_baseTimes.js": 94,
+            "_isIndex.js": 185,
+            "_baseKeysIn.js": 253,
+            "_nativeKeysIn.js": 104,
+            "_createAssigner.js": 321,
+            "_baseRest.js": 131,
+            "identity.js": 51,
+            "_overRest.js": 272,
+            "_apply.js": 209,
+            "_setToString.js": 82,
+            "_baseSetToString.js": 192,
+            "constant.js": 70,
+            "_shortOut.js": 203,
+            "_isIterateeCall.js": 225,
+            "template.js": 1446,
+            "assignInWith.js": 132,
+            "attempt.js": 166,
+            "isError.js": 264,
+            "_baseValues.js": 104,
+            "_arrayMap.js": 122,
+            "_customDefaultsAssignIn.js": 149,
+            "_escapeStringChar.js": 136,
+            "keys.js": 132,
+            "_baseKeys.js": 228,
+            "_nativeKeys.js": 72,
+            "_reInterpolate.js": 53,
+            "templateSettings.js": 179,
+            "escape.js": 164,
+            "_escapeHtmlChar.js": 123,
+            "_basePropertyOf.js": 89,
+            "toString.js": 92,
+            "_baseToString.js": 294,
+            "isSymbol.js": 149,
+            "_reEscape.js": 53,
+            "_reEvaluate.js": 52
+          },
+          "mongo-object": {
+            "package.json": 94,
+            "dist": {
+              "mongo-object.js": 11759
+            }
+          },
+          "lodash.foreach": {
+            "package.json": 66,
+            "index.js": 1789
+          },
+          "lodash.isobject": {
+            "package.json": 67,
+            "index.js": 97
+          },
+          "lodash.without": {
+            "package.json": 66,
+            "index.js": 4749
+          },
+          "lodash.omit": {
+            "package.json": 63,
+            "index.js": 6628
+          },
+          "lodash.pick": {
+            "package.json": 63,
+            "index.js": 1966
+          },
+          "lodash.uniq": {
+            "package.json": 63,
+            "index.js": 4221
+          },
+          "lodash.union": {
+            "package.json": 64,
+            "index.js": 5338
+          },
+          "lodash.findwhere": {
+            "package.json": 68,
+            "index.js": 111,
+            "node_modules": {
+              "lodash.find": {
+                "package.json": 63,
+                "index.js": 285
+              }
+            }
+          },
+          "lodash._basematches": {
+            "package.json": 71,
+            "index.js": 472
+          },
+          "lodash._baseismatch": {
+            "package.json": 71,
+            "index.js": 473
+          },
+          "lodash._baseisequal": {
+            "package.json": 71,
+            "index.js": 2042
+          },
+          "lodash.isarray": {
+            "package.json": 66,
+            "index.js": 777
+          },
+          "lodash.istypedarray": {
+            "package.json": 71,
+            "index.js": 904
+          },
+          "lodash.keys": {
+            "package.json": 63,
+            "index.js": 1113
+          },
+          "lodash._getnative": {
+            "package.json": 69,
+            "index.js": 598
+          },
+          "lodash.isarguments": {
+            "package.json": 70,
+            "index.js": 595
+          },
+          "lodash.pairs": {
+            "package.json": 64,
+            "index.js": 263
+          },
+          "lodash._basecallback": {
+            "package.json": 72,
+            "index.js": 2195
+          },
+          "lodash._bindcallback": {
+            "package.json": 72,
+            "index.js": 402
+          },
+          "lodash._baseeach": {
+            "package.json": 68,
+            "index.js": 643
+          },
+          "lodash._basefind": {
+            "package.json": 68,
+            "index.js": 115
+          },
+          "lodash._basefindindex": {
+            "package.json": 73,
+            "index.js": 120
+          },
+          "lodash.find": {
+            "package.json": 63,
+            "index.js": 12461
+          },
+          "meteor-node-stubs": {
+            "package.json": 85,
+            "index.js": 354,
+            "map.json": 946,
+            "deps": {
+              "process.js": 36
+            },
+            "node_modules": {
+              "process": {
+                "browser.js": 1686
+              }
+            }
+          },
+          "@babel": {
+            "runtime": {
+              "package.json": 456,
+              "helpers": {
+                "interopRequireDefault.js": 79,
+                "objectSpread.js": 380,
+                "defineProperty.js": 148
+              }
+            }
+          }
+        }
+      }
+    ],
+    "packages/modern-browsers.js": 35,
+    "packages/babel-compiler.js": 34,
+    "packages/ecmascript.js": 30,
+    "packages/ecmascript-runtime.js": 38,
+    "packages/babel-runtime.js": [
+      1566,
+      {
+        "node_modules": {
+          "meteor": {
+            "babel-runtime": {
+              "babel-runtime.js": 678,
+              "node_modules": {
+                "meteor-babel-helpers": {
+                  "package.json": 88,
+                  "index.js": 389
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "packages/promise.js": [
+      1319,
+      {
+        "node_modules": {
+          "meteor": {
+            "promise": {
+              "modern.js": 23,
+              "client.js": 71,
+              "extensions.js": 391,
+              "node_modules": {
+                "meteor-promise": {
+                  "package.json": 119,
+                  "promise_client.js": 266
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "packages/fetch.js": [
+      406,
+      {
+        "node_modules": {
+          "meteor": {
+            "fetch": {
+              "modern.js": 92
+            }
+          }
+        }
+      }
+    ],
+    "packages/dynamic-import.js": [
+      4583,
+      {
+        "node_modules": {
+          "meteor": {
+            "dynamic-import": {
+              "client.js": 1552,
+              "cache.js": 1930,
+              "common.js": 60,
+              "dynamic-versions.js": 640
+            }
+          }
+        }
+      }
+    ],
+    "packages/es5-shim.js": 28,
+    "packages/ecmascript-runtime-client.js": [
+      13119,
+      {
+        "node_modules": {
+          "meteor": {
+            "ecmascript-runtime-client": {
+              "modern.js": 683,
+              "node_modules": {
+                "core-js": {
+                  "modules": {
+                    "es7.object.get-own-property-descriptors.js": 279,
+                    "_export.js": 530,
+                    "_global.js": 184,
+                    "_core.js": 76,
+                    "_hide.js": 167,
+                    "_object-dp.js": 334,
+                    "_an-object.js": 121,
+                    "_is-object.js": 94,
+                    "_ie8-dom-define.js": 168,
+                    "_descriptors.js": 123,
+                    "_fails.js": 74,
+                    "_dom-create.js": 147,
+                    "_to-primitive.js": 342,
+                    "_property-desc.js": 111,
+                    "_redefine.js": 496,
+                    "_has.js": 84,
+                    "_uid.js": 129,
+                    "_ctx.js": 303,
+                    "_a-function.js": 113,
+                    "_own-keys.js": 196,
+                    "_object-gopn.js": 163,
+                    "_object-keys-internal.js": 261,
+                    "_to-iobject.js": 94,
+                    "_iobject.js": 143,
+                    "_cof.js": 86,
+                    "_defined.js": 103,
+                    "_array-includes.js": 291,
+                    "_to-length.js": 113,
+                    "_to-integer.js": 102,
+                    "_to-absolute-index.js": 121,
+                    "_shared-key.js": 107,
+                    "_shared.js": 284,
+                    "_library.js": 29,
+                    "_enum-bug-keys.js": 133,
+                    "_object-gops.js": 47,
+                    "_object-gopd.js": 313,
+                    "_object-pie.js": 42,
+                    "_create-property.js": 134,
+                    "es6.object.is.js": 73,
+                    "_same-value.js": 94,
+                    "es6.function.name.js": 215,
+                    "es6.number.is-finite.js": 132,
+                    "es6.number.is-nan.js": 84,
+                    "es7.array.flatten.js": 336,
+                    "_flatten-into-array.js": 409,
+                    "_is-array.js": 94,
+                    "_wks.js": 190,
+                    "_to-object.js": 81,
+                    "_array-species-create.js": 101,
+                    "_array-species-constructor.js": 257,
+                    "_add-to-unscopables.js": 134,
+                    "es7.array.flat-map.js": 330,
+                    "es7.object.values.js": 115,
+                    "_object-to-array.js": 231,
+                    "_object-keys.js": 127,
+                    "es7.object.entries.js": 116,
+                    "es7.string.pad-start.js": 237,
+                    "_string-pad.js": 289,
+                    "_string-repeat.js": 237,
+                    "_user-agent.js": 78,
+                    "es7.string.pad-end.js": 235
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "packages/base64.js": [
+      1823,
+      {
+        "node_modules": {
+          "meteor": {
+            "base64": {
+              "base64.js": 1454
+            }
+          }
+        }
+      }
+    ],
+    "packages/ejson.js": [
+      6259,
+      {
+        "node_modules": {
+          "meteor": {
+            "ejson": {
+              "ejson.js": 4958,
+              "stringify.js": 901
+            }
+          }
+        }
+      }
+    ],
+    "packages/diff-sequence.js": [
+      2886,
+      {
+        "node_modules": {
+          "meteor": {
+            "diff-sequence": {
+              "diff.js": 2470
+            }
+          }
+        }
+      }
+    ],
+    "packages/geojson-utils.js": [
+      5171,
+      {
+        "node_modules": {
+          "meteor": {
+            "geojson-utils": {
+              "main.js": 48,
+              "geojson-utils.js": 4784
+            }
+          }
+        }
+      }
+    ],
+    "packages/id-map.js": [
+      1273,
+      {
+        "node_modules": {
+          "meteor": {
+            "id-map": {
+              "id-map.js": 886
+            }
+          }
+        }
+      }
+    ],
+    "packages/random.js": [
+      3577,
+      {
+        "node_modules": {
+          "meteor": {
+            "random": {
+              "random.js": 3217
+            }
+          }
+        }
+      }
+    ],
+    "packages/mongo-id.js": [
+      1773,
+      {
+        "node_modules": {
+          "meteor": {
+            "mongo-id": {
+              "id.js": 1329
+            }
+          }
+        }
+      }
+    ],
+    "packages/ordered-dict.js": [
+      3029,
+      {
+        "node_modules": {
+          "meteor": {
+            "ordered-dict": {
+              "ordered_dict.js": 2623
+            }
+          }
+        }
+      }
+    ],
+    "packages/tracker.js": [
+      4512,
+      {
+        "node_modules": {
+          "meteor": {
+            "tracker": {
+              "tracker.js": 4135
+            }
+          }
+        }
+      }
+    ],
+    "packages/minimongo.js": [
+      43224,
+      {
+        "node_modules": {
+          "meteor": {
+            "minimongo": {
+              "minimongo_client.js": 48,
+              "common.js": 12171,
+              "cursor.js": 4588,
+              "local_collection.js": 19643,
+              "matcher.js": 2512,
+              "minimongo_common.js": 208,
+              "observe_handle.js": 52,
+              "sorter.js": 3147
+            }
+          }
+        }
+      }
+    ],
+    "packages/check.js": [
+      6140,
+      {
+        "node_modules": {
+          "meteor": {
+            "check": {
+              "match.js": 5422,
+              "isPlainObject.js": 308
+            }
+          }
+        }
+      }
+    ],
+    "packages/retry.js": [
+      1090,
+      {
+        "node_modules": {
+          "meteor": {
+            "retry": {
+              "retry.js": 708
+            }
+          }
+        }
+      }
+    ],
+    "packages/callback-hook.js": [
+      1536,
+      {
+        "node_modules": {
+          "meteor": {
+            "callback-hook": {
+              "hook.js": 1153
+            }
+          }
+        }
+      }
+    ],
+    "packages/ddp-common.js": [
+      4597,
+      {
+        "node_modules": {
+          "meteor": {
+            "ddp-common": {
+              "namespace.js": 16,
+              "heartbeat.js": 1287,
+              "utils.js": 1348,
+              "method_invocation.js": 485,
+              "random_stream.js": 635
+            }
+          }
+        }
+      }
+    ],
+    "packages/reload.js": [
+      1977,
+      {
+        "node_modules": {
+          "meteor": {
+            "reload": {
+              "reload.js": 1608
+            }
+          }
+        }
+      }
+    ],
+    "packages/socket-stream-client.js": [
+      36896,
+      {
+        "node_modules": {
+          "meteor": {
+            "socket-stream-client": {
+              "browser.js": 3031,
+              "common.js": 2511,
+              "sockjs-0.3.4.js": 30254,
+              "urls.js": 694
+            }
+          }
+        }
+      }
+    ],
+    "packages/ddp-client.js": [
+      22449,
+      {
+        "node_modules": {
+          "meteor": {
+            "ddp-client": {
+              "client": {
+                "client.js": 134,
+                "client_convenience.js": 862
+              },
+              "common": {
+                "MethodInvoker.js": 1144,
+                "livedata_connection.js": 18540,
+                "namespace.js": 933
+              }
+            }
+          }
+        }
+      }
+    ],
+    "packages/ddp.js": 78,
+    "packages/ddp-server.js": 30,
+    "packages/allow-deny.js": [
+      5811,
+      {
+        "node_modules": {
+          "meteor": {
+            "allow-deny": {
+              "allow-deny.js": 5266
+            }
+          }
+        }
+      }
+    ],
+    "packages/insecure.js": 28,
+    "packages/mongo.js": [
+      8993,
+      {
+        "node_modules": {
+          "meteor": {
+            "mongo": {
+              "local_collection_driver.js": 360,
+              "collection.js": 7835
+            }
+          }
+        }
+      }
+    ],
+    "packages/blaze-html-templates.js": 40,
+    "packages/reactive-var.js": 818,
+    "packages/standard-minifier-css.js": 41,
+    "packages/standard-minifier-js.js": 40,
+    "packages/shell-server.js": 32,
+    "packages/autopublish.js": 31,
+    "packages/fortawesome_fontawesome.js": 43,
+    "packages/livedata.js": 105,
+    "packages/underscore.js": 14349,
+    "packages/deps.js": 111,
+    "packages/jquery.js": [
+      97271,
+      {
+        "node_modules": {
+          "meteor": {
+            "jquery": {
+              "main.js": 134,
+              "jquery.js": 96823
+            }
+          }
+        }
+      }
+    ],
+    "packages/observe-sequence.js": 2915,
+    "packages/htmljs.js": 10030,
+    "packages/blaze.js": 39095,
+    "packages/spacebars.js": 2928,
+    "packages/templating-compiler.js": 39,
+    "packages/templating-runtime.js": 3045,
+    "packages/templating.js": 103,
+    "packages/ui.js": 137,
+    "packages/reactive-dict.js": [
+      3920,
+      {
+        "node_modules": {
+          "meteor": {
+            "reactive-dict": {
+              "migration.js": 774,
+              "reactive-dict.js": 2649
+            }
+          }
+        }
+      }
+    ],
+    "packages/momentjs_moment.js": 35531,
+    "packages/aldeed_autoform.js": [
+      145128,
+      {
+        "node_modules": {
+          "meteor": {
+            "aldeed:autoform": {
+              "utility.js": 4559,
+              "form-preserve.js": 1126,
+              "autoform-hooks.js": 1045,
+              "autoform-formdata.js": 392,
+              "autoform-arrays.js": 3311,
+              "autoform.js": 238,
+              "autoform-helpers.js": 3639,
+              "autoform-validation.js": 403,
+              "autoform-inputs.js": 1687,
+              "autoform-api.js": 9689,
+              "formTypes": {
+                "insert.js": 629,
+                "update.js": 588,
+                "update-pushArray.js": 769,
+                "method.js": 893,
+                "method-update.js": 946,
+                "normal.js": 595,
+                "readonly.js": 206,
+                "disabled.js": 206
+              },
+              "inputTypes": {
+                "value-converters.js": 3130,
+                "boolean-checkbox": {
+                  "template.boolean-checkbox.js": 367,
+                  "boolean-checkbox.js": 413
+                },
+                "boolean-radios": {
+                  "template.boolean-radios.js": 1443,
+                  "boolean-radios.js": 1014
+                },
+                "boolean-select": {
+                  "template.boolean-select.js": 496,
+                  "boolean-select.js": 801
+                },
+                "button": {
+                  "template.button.js": 283,
+                  "button.js": 63
+                },
+                "color": {
+                  "template.color.js": 279,
+                  "color.js": 61
+                },
+                "contenteditable": {
+                  "template.contenteditable.js": 236,
+                  "contenteditable.js": 611
+                },
+                "date": {
+                  "template.date.js": 275,
+                  "date.js": 709
+                },
+                "datetime": {
+                  "template.datetime.js": 291,
+                  "datetime.js": 937
+                },
+                "datetime-local": {
+                  "template.datetime-local.js": 312,
+                  "datetime-local.js": 1442
+                },
+                "email": {
+                  "template.email.js": 279,
+                  "email.js": 173
+                },
+                "file": {
+                  "template.file.js": 275,
+                  "file.js": 59
+                },
+                "hidden": {
+                  "template.hidden.js": 283,
+                  "hidden.js": 448
+                },
+                "image": {
+                  "template.image.js": 279,
+                  "image.js": 61
+                },
+                "month": {
+                  "template.month.js": 279,
+                  "month.js": 129
+                },
+                "number": {
+                  "template.number.js": 283,
+                  "number.js": 552
+                },
+                "password": {
+                  "template.password.js": 291,
+                  "password.js": 247
+                },
+                "radio": {
+                  "template.radio.js": 411,
+                  "radio.js": 290
+                },
+                "range": {
+                  "template.range.js": 279,
+                  "range.js": 386
+                },
+                "reset": {
+                  "template.reset.js": 279,
+                  "reset.js": 61
+                },
+                "search": {
+                  "template.search.js": 283,
+                  "search.js": 243
+                },
+                "select": {
+                  "template.select.js": 1019,
+                  "select.js": 1157
+                },
+                "select-checkbox": {
+                  "template.select-checkbox.js": 600,
+                  "select-checkbox.js": 657
+                },
+                "select-checkbox-inline": {
+                  "template.select-checkbox-inline.js": 611,
+                  "select-checkbox-inline.js": 676
+                },
+                "select-multiple": {
+                  "template.select-multiple.js": 1057,
+                  "select-multiple.js": 609
+                },
+                "select-radio": {
+                  "template.select-radio.js": 579,
+                  "select-radio.js": 558
+                },
+                "select-radio-inline": {
+                  "template.select-radio-inline.js": 590,
+                  "select-radio-inline.js": 577
+                },
+                "submit": {
+                  "template.submit.js": 283,
+                  "submit.js": 63
+                },
+                "tel": {
+                  "template.tel.js": 271,
+                  "tel.js": 237
+                },
+                "text": {
+                  "template.text.js": 275,
+                  "text.js": 544
+                },
+                "textarea": {
+                  "template.textarea.js": 263,
+                  "textarea.js": 834
+                },
+                "time": {
+                  "template.time.js": 275,
+                  "time.js": 127
+                },
+                "url": {
+                  "template.url.js": 271,
+                  "url.js": 237
+                },
+                "week": {
+                  "template.week.js": 275,
+                  "week.js": 127
+                }
+              },
+              "components": {
+                "autoForm": {
+                  "template.autoForm.js": 520,
+                  "autoForm.js": 1871
+                },
+                "quickForm": {
+                  "template.quickForm.js": 297,
+                  "quickForm.js": 1260
+                },
+                "afArrayField": {
+                  "template.afArrayField.js": 306,
+                  "afArrayField.js": 428
+                },
+                "afEachArrayItem": {
+                  "template.afEachArrayItem.js": 841,
+                  "afEachArrayItem.js": 327
+                },
+                "afFieldInput": {
+                  "template.afFieldInput.js": 306,
+                  "afFieldInput.js": 998
+                },
+                "afFormGroup": {
+                  "template.afFormGroup.js": 303,
+                  "afFormGroup.js": 1009
+                },
+                "afObjectField": {
+                  "template.afObjectField.js": 309,
+                  "afObjectField.js": 247
+                },
+                "afQuickField": {
+                  "template.afQuickField.js": 883,
+                  "afQuickField.js": 700
+                },
+                "afQuickFields": {
+                  "template.afQuickFields.js": 399,
+                  "afQuickFields.js": 194
+                }
+              },
+              "autoform-events.js": 5121,
+              "templates": {
+                "bootstrap3": {
+                  "bootstrap3.js": 254,
+                  "components": {
+                    "quickForm": {
+                      "template.quickForm.js": 1630,
+                      "quickForm.js": 546
+                    },
+                    "afArrayField": {
+                      "template.afArrayField.js": 2845,
+                      "afArrayField.js": 170
+                    },
+                    "afFormGroup": {
+                      "template.afFormGroup.js": 1385,
+                      "afFormGroup.js": 283
+                    },
+                    "afObjectField": {
+                      "template.afObjectField.js": 1183,
+                      "afObjectField.js": 179
+                    }
+                  },
+                  "inputTypes": {
+                    "boolean-checkbox": {
+                      "template.boolean-checkbox.js": 462
+                    },
+                    "boolean-radios": {
+                      "template.boolean-radios.js": 1524,
+                      "boolean-radios.js": 570
+                    },
+                    "boolean-select": {
+                      "template.boolean-select.js": 538
+                    },
+                    "button": {
+                      "template.button.js": 317
+                    },
+                    "color": {
+                      "template.color.js": 321
+                    },
+                    "date": {
+                      "template.date.js": 317
+                    },
+                    "datetime": {
+                      "template.datetime.js": 333
+                    },
+                    "datetime-local": {
+                      "template.datetime-local.js": 354
+                    },
+                    "email": {
+                      "template.email.js": 321
+                    },
+                    "month": {
+                      "template.month.js": 321
+                    },
+                    "number": {
+                      "template.number.js": 325
+                    },
+                    "password": {
+                      "template.password.js": 333
+                    },
+                    "radio": {
+                      "template.radio.js": 500,
+                      "radio.js": 126
+                    },
+                    "range": {
+                      "template.range.js": 312
+                    },
+                    "reset": {
+                      "template.reset.js": 313
+                    },
+                    "search": {
+                      "template.search.js": 325
+                    },
+                    "select": {
+                      "template.select.js": 1037
+                    },
+                    "select-checkbox": {
+                      "template.select-checkbox.js": 703,
+                      "select-checkbox.js": 235
+                    },
+                    "select-checkbox-inline": {
+                      "template.select-checkbox-inline.js": 706,
+                      "select-checkbox-inline.js": 241
+                    },
+                    "select-multiple": {
+                      "template.select-multiple.js": 1075
+                    },
+                    "select-radio": {
+                      "template.select-radio.js": 685,
+                      "select-radio.js": 232
+                    },
+                    "select-radio-inline": {
+                      "template.select-radio-inline.js": 688,
+                      "select-radio-inline.js": 238
+                    },
+                    "submit": {
+                      "template.submit.js": 317
+                    },
+                    "tel": {
+                      "template.tel.js": 313
+                    },
+                    "text": {
+                      "template.text.js": 317
+                    },
+                    "textarea": {
+                      "template.textarea.js": 305
+                    },
+                    "time": {
+                      "template.time.js": 317
+                    },
+                    "url": {
+                      "template.url.js": 313
+                    },
+                    "week": {
+                      "template.week.js": 317
+                    }
+                  }
+                },
+                "bootstrap3-horizontal": {
+                  "components": {
+                    "quickForm": {
+                      "template.quickForm.js": 1833,
+                      "quickForm.js": 846
+                    },
+                    "afArrayField": {
+                      "template.afArrayField.js": 3269,
+                      "afArrayField.js": 307
+                    },
+                    "afFormGroup": {
+                      "template.afFormGroup.js": 1629,
+                      "afFormGroup.js": 636
+                    },
+                    "afObjectField": {
+                      "template.afObjectField.js": 1101,
+                      "afObjectField.js": 386
+                    }
+                  },
+                  "inputTypes": {
+                    "boolean-checkbox": {
+                      "template.boolean-checkbox.js": 787,
+                      "boolean-checkbox.js": 232
+                    }
+                  }
+                },
+                "bootstrap3-inline": {
+                  "template.bootstrap3-inline.js": 2308,
+                  "bootstrap3-inline.js": 588
+                },
+                "plain": {
+                  "components": {
+                    "quickForm": {
+                      "template.quickForm.js": 1566,
+                      "quickForm.js": 225
+                    },
+                    "afArrayField": {
+                      "template.afArrayField.js": 2232
+                    },
+                    "afFormGroup": {
+                      "template.afFormGroup.js": 1357
+                    },
+                    "afObjectField": {
+                      "template.afObjectField.js": 536,
+                      "afObjectField.js": 111
+                    }
+                  }
+                },
+                "plain-fieldset": {
+                  "template.plain-fieldset.js": 1193,
+                  "plain-fieldset.js": 237
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "packages/aldeed_template-extension.js": [
+      6774,
+      {
+        "node_modules": {
+          "meteor": {
+            "aldeed:template-extension": {
+              "lib": {
+                "hooks.js": 644,
+                "template-for-each.js": 224,
+                "template-hooks.js": 373,
+                "template-global-hooks.js": 197,
+                "template-for-each-instance.js": 274,
+                "template-inherits-events-from.js": 228,
+                "template-inherits-helpers-from.js": 243,
+                "template-inherits-hooks-from.js": 811,
+                "template-register-helpers.js": 102,
+                "template-replaces.js": 170,
+                "template-clear-event-maps.js": 72,
+                "template-copy-as.js": 425,
+                "template-instance-parent.js": 365,
+                "template-instance-get.js": 118,
+                "template-parent-data-function.js": 252
+              }
+            }
+          }
+        }
+      }
+    ],
+    "packages/imajus_autoform-bootstrap4.js": [
+      36392,
+      {
+        "node_modules": {
+          "meteor": {
+            "imajus:autoform-bootstrap4": {
+              "autoform-bootstrap4.js": 110,
+              "templates": {
+                "bootstrap4-inline": {
+                  "bootstrap4-inline.html": 69,
+                  "template.bootstrap4-inline.js": 2308,
+                  "bootstrap4-inline.js": 385
+                },
+                "bootstrap4": {
+                  "icon.html": 56,
+                  "template.icon.js": 201,
+                  "icon.js": 38,
+                  "index.js": 1568,
+                  "components": {
+                    "afArrayField": {
+                      "afArrayField.html": 64,
+                      "template.afArrayField.js": 3309,
+                      "afArrayField.js": 125
+                    },
+                    "afFormGroup": {
+                      "afFormGroup.html": 63,
+                      "template.afFormGroup.js": 1385,
+                      "afFormGroup.js": 429
+                    },
+                    "afObjectField": {
+                      "afObjectField.html": 65,
+                      "template.afObjectField.js": 1765,
+                      "afObjectField.js": 251
+                    },
+                    "quickForm": {
+                      "quickForm.html": 61,
+                      "template.quickForm.js": 1630,
+                      "quickForm.js": 165
+                    }
+                  },
+                  "inputTypes": {
+                    "boolean-checkbox": {
+                      "boolean-checkbox.html": 68,
+                      "template.boolean-checkbox.js": 984,
+                      "boolean-checkbox.js": 277
+                    },
+                    "boolean-radios": {
+                      "boolean-radios.html": 66,
+                      "template.boolean-radios.js": 1901,
+                      "boolean-radios.js": 917
+                    },
+                    "boolean-select": {
+                      "boolean-select.html": 66,
+                      "template.boolean-select.js": 538
+                    },
+                    "button": {
+                      "button.html": 58,
+                      "template.button.js": 317
+                    },
+                    "color": {
+                      "color.html": 57,
+                      "template.color.js": 321
+                    },
+                    "date": {
+                      "date.html": 56,
+                      "template.date.js": 317
+                    },
+                    "datetime-local": {
+                      "datetime-local.html": 66,
+                      "template.datetime-local.js": 354
+                    },
+                    "datetime": {
+                      "datetime.html": 60,
+                      "template.datetime.js": 333
+                    },
+                    "email": {
+                      "email.html": 57,
+                      "template.email.js": 321
+                    },
+                    "month": {
+                      "month.html": 57,
+                      "template.month.js": 321
+                    },
+                    "number": {
+                      "number.html": 58,
+                      "template.number.js": 325
+                    },
+                    "password": {
+                      "password.html": 60,
+                      "template.password.js": 333
+                    },
+                    "radio": {
+                      "radio.html": 57,
+                      "template.radio.js": 500,
+                      "radio.js": 157
+                    },
+                    "range": {
+                      "range.html": 57,
+                      "template.range.js": 312
+                    },
+                    "reset": {
+                      "reset.html": 57,
+                      "template.reset.js": 313
+                    },
+                    "search": {
+                      "search.html": 58,
+                      "template.search.js": 325
+                    },
+                    "select-checkbox-inline": {
+                      "select-checkbox-inline.html": 74,
+                      "template.select-checkbox-inline.js": 706,
+                      "select-checkbox-inline.js": 202
+                    },
+                    "select-checkbox": {
+                      "select-checkbox.html": 67,
+                      "template.select-checkbox.js": 703,
+                      "select-checkbox.js": 183
+                    },
+                    "select-multiple": {
+                      "select-multiple.html": 67,
+                      "template.select-multiple.js": 1075
+                    },
+                    "select-radio-inline": {
+                      "select-radio-inline.html": 71,
+                      "template.select-radio-inline.js": 1139,
+                      "select-radio-inline.js": 397
+                    },
+                    "select-radio": {
+                      "select-radio.html": 64,
+                      "template.select-radio.js": 685,
+                      "select-radio.js": 174
+                    },
+                    "select": {
+                      "select.html": 58,
+                      "template.select.js": 1037
+                    },
+                    "submit": {
+                      "submit.html": 58,
+                      "template.submit.js": 317
+                    },
+                    "tel": {
+                      "tel.html": 55,
+                      "template.tel.js": 313
+                    },
+                    "text": {
+                      "text.html": 56,
+                      "template.text.js": 317
+                    },
+                    "textarea": {
+                      "textarea.html": 60,
+                      "template.textarea.js": 305
+                    },
+                    "time": {
+                      "time.html": 56,
+                      "template.time.js": 317
+                    },
+                    "url": {
+                      "url.html": 55,
+                      "template.url.js": 313
+                    },
+                    "week": {
+                      "week.html": 56,
+                      "template.week.js": 317
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "packages/jkuester_autoform-passwordmix.js": [
+      4157,
+      {
+        "node_modules": {
+          "meteor": {
+            "jkuester:autoform-passwordmix": {
+              "template.autoform-passwordmix.js": 1293,
+              "autoform-passwordmix.js": 2044
+            }
+          }
+        }
+      }
+    ],
+    "packages/webapp.js": [
+      694,
+      {
+        "node_modules": {
+          "meteor": {
+            "webapp": {
+              "webapp_client.js": 311
+            }
+          }
+        }
+      }
+    ],
+    "packages/hot-code-push.js": 33,
+    "packages/launch-screen.js": 787,
+    "packages/autoupdate.js": [
+      3554,
+      {
+        "node_modules": {
+          "meteor": {
+            "autoupdate": {
+              "autoupdate_client.js": 1878,
+              "client_versions.js": 1148
+            }
+          }
+        }
+      }
+    ],
+    "app/global-imports.js": [
+      773,
+      {}
+    ],
+    "app/app.js": [
+      4226,
+      {
+        "client": {
+          "main.html": 56,
+          "template.main.js": 1286,
+          "main.css": 12,
+          "main.js": 1725
+        },
+        "imports": {
+          "form": {
+            "formutil.js": 347
+          },
+          "schema": {
+            "Schema.js": 573
+          }
+        }
+      }
+    ]
+  }
+}

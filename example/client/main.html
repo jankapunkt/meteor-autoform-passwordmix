@@ -4,8 +4,13 @@
 
 <body>
 <div class="container-fluid p-0">
-    <div class="jumbotron">
-        <h1 class="text-center">Meteor AutoForm Passwordmix</h1>
+	<div class="jumbotron">
+		<h1 class="text-center">Meteor AutoForm Passwordmix</h1>
+		<div class="text-center">
+			<a href="https://github.com/jankapunkt/meteor-autoform-passwordmix" title="Fork on GitHub">
+				<i class="fa fa-fw fa-github fa-3x"></i>
+			</a>
+		</div>
     </div>
 </div>
 <div class="container">
@@ -13,7 +18,7 @@
     <div class="col">
         {{> quickForm id="wordsForm" schema=wordsFormSchema type="normal"}}
 
-        <textarea class="form-control" rows="5" readonly>{{passwordDoc}}</textarea>
+        <textarea class="form-control" rows="5" readonly>{{passwordDoc}}{{confirmDoc}}</textarea>
     </div>
     <div class="col">
         {{> quickForm id="configForm" schema=configFormSchema type="normal"}}

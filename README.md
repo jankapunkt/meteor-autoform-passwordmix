@@ -3,7 +3,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-Check out the DEMO!
+Check out the [DEMO](https://jankapunkt.github.io/meteor-autoform-passwordmix/)!
 
 Configurable extension to provide a password input that consists of a mix of random words.
 
@@ -25,8 +25,9 @@ The extensions provides configration for
 * Number of words required (default 3)
 * Min/Max length for each word required (default min. 4 / max. 20)
 * Insert a separator character bewteen each word (default none)
-* RegExp pattern for each word (default enable all) (**tbd**)
-* Whitespace stripping enabled/disabled (default off) (**tbd**)
+* RegExp pattern for each word (default enable all)
+* Whitespace prevention enabled/disabled (default off)
+* Allow or prevent paste on the inputs (default enabled)
 * Autojumping to next input on typing / to previous input on backspace (default off) (**tbd**)
 
 A full example would therefore look like the following:
@@ -40,8 +41,12 @@ A full example would therefore look like the following:
       words: 3,
       min: 4,
       max: 20,
-      regExp: /^[a-z0-9A-Z_@-\\!\\?\\.]$/, // this is just an example and not a default!
+      regExp: '[a-z0-9A-Z]+',
       separator: '-',
+      whitespace: true,
+      jump: true,
+      show: true,
+      paste: true
     }
   }
 }

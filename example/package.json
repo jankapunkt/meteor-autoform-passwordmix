@@ -5,7 +5,12 @@
     "start": "METEOR_PACKAGE_DIRS=../ meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer"
+    "test-cli": "meteor test --once --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "build": "METEOR_PACKAGE_DIRS=../ meteor meteor-build-client ../docs -t ../build/template.html -p \"\" && cp ../build/loadingScreen.css ../docs && chmod -R 770 ../docs",
+    "kill": "kill -9 `ps ax | grep node | grep meteor | awk '{print $1}'`",
+    "lint": "standard",
+    "lint-fix": "standard --fix"
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
