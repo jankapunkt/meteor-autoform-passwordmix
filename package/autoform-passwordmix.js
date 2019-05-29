@@ -1,8 +1,6 @@
-/* global AutoForm $ */
+/* global AutoForm */
 import { Template } from 'meteor/templating'
 import { ReactiveDict } from 'meteor/reactive-dict'
-
-const whiteSpaceRegExp = new RegExp(/^[\s]+$/)
 
 AutoForm.addInputType('passwordmix', {
   template: 'afPasswordmix',
@@ -88,7 +86,7 @@ Template.afPasswordmix.events({
     const instanceId = templateInstance.data.atts.id
     const state = templateInstance.state.get(instanceId)
     const { whitespace } = state
-    const regExp = state.regExp && new RegExp(  state.regExp, 'g')
+    const regExp = state.regExp && new RegExp(state.regExp, 'g')
 
     switch (event.key) {
       case 'Backspace':
@@ -114,12 +112,11 @@ Template.afPasswordmix.events({
     if (!paste) {
       event.preventDefault()
       event.stopPropagation()
-      return
     }
   },
   'input .afPasswordmix-inputField' (event, templateInstance) {
     updateWords(templateInstance)
-  },
+  }
 })
 
 function assignError ($target, invalid) {

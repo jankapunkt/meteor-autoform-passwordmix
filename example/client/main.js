@@ -22,7 +22,7 @@ const defaultConfig = {
   whitespace: true,
   jump: true,
   show: true,
-  paste: true,
+  paste: true
 }
 
 const configFormSchema = Schema.create({
