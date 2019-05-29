@@ -43,20 +43,47 @@ Template.afPasswordmix.onCreated(function () {
 Template.afPasswordmix.onRendered(function () {
   const instance = this
   const data = Template.currentData()
-  const { value } = data
-  if (!value) return
+  const $hidden = instance.$(`#afPasswordmix-${instance.data.atts.id}`)
+  $hidden.addClass('bg-danger')
+  if (data.atts.autocomplete) {
+    setTimeout(() => {
+      const autocomplete = document.getElementById(`afPasswordmix-${instance.data.atts.id}`)
+      const value = autocomplete.value
+      if (value) {
+        const { separator } = data.atts
+        instance.$('.afPasswordmix-hiddenInput').val(value)
+        const split = value.split(separator)
+        instance.$('.afPasswordmix-inputField').each(function (index, target) {
+          if (index < split.length) {
+            instance.$(target).val(split[ index ])
+          }
+        })
+      }
+    }, 50)
+  } else {
+    const { value } = data
+    if (!value) return
 
-  const { separator } = data.atts
-  instance.$('.afPasswordmix-hiddenInput').val(value)
-  const split = value.split(separator)
-  instance.$('.afPasswordmix-inputField').each(function (index, target) {
-    if (index < split.length) {
-      instance.$(target).val(split[ index ])
-    }
-  })
+    const { separator } = data.atts
+    instance.$('.afPasswordmix-hiddenInput').val(value)
+    const split = value.split(separator)
+    instance.$('.afPasswordmix-inputField').each(function (index, target) {
+      if (index < split.length) {
+        instance.$(target).val(split[ index ])
+      }
+    })
+  }
 })
 
 Template.afPasswordmix.helpers({
+  autocomplete () {
+    const instance = Template.instance()
+    const state = instance.state.get(instance.data.atts.id)
+    return state && state.autocomplete
+  },
+  instanceId () {
+    return Template.instance().data.atts.id
+  },
   wordInputs () {
     const instance = Template.instance()
     const state = instance.state.get(instance.data.atts.id)
