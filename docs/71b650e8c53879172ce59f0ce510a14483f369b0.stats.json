@@ -3,15 +3,15 @@
     "name": "standard-minifier-js",
     "version": "2.4.1"
   },
-  "totalMinifiedBytes": 1106995,
-  "totalMinifiedGzipBytes": 281951,
+  "totalMinifiedBytes": 1108413,
+  "totalMinifiedGzipBytes": 282211,
   "minifiedBytesByPackage": {
     "packages/meteor.js": 9484,
     "packages/meteor-base.js": 31,
     "packages/mobile-experience.js": 37,
     "packages/modules-runtime.js": 4199,
     "packages/modules.js": [
-      495656,
+      495692,
       {
         "node_modules": {
           "meteor": {
@@ -367,7 +367,7 @@
           },
           "@babel": {
             "runtime": {
-              "package.json": 456,
+              "package.json": 492,
               "helpers": {
                 "interopRequireDefault.js": 79,
                 "objectSpread.js": 380,
@@ -1405,13 +1405,13 @@
       }
     ],
     "packages/jkuester_autoform-passwordmix.js": [
-      4157,
+      5340,
       {
         "node_modules": {
           "meteor": {
             "jkuester:autoform-passwordmix": {
-              "template.autoform-passwordmix.js": 1293,
-              "autoform-passwordmix.js": 2044
+              "template.autoform-passwordmix.js": 1735,
+              "autoform-passwordmix.js": 2785
             }
           }
         }
@@ -1449,20 +1449,20 @@
       {}
     ],
     "app/app.js": [
-      4226,
+      4425,
       {
         "client": {
           "main.html": 56,
           "template.main.js": 1286,
           "main.css": 12,
-          "main.js": 1725
+          "main.js": 1891
         },
         "imports": {
           "form": {
             "formutil.js": 347
           },
           "schema": {
-            "Schema.js": 573
+            "Schema.js": 606
           }
         }
       }
