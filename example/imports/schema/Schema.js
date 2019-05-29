@@ -7,7 +7,7 @@ export const Schema = {
   create (obj, { tracker = Tracker } = {}) {
     return new SimpleSchema(obj, { tracker })
   },
-  toSchemaDef ({ words, min, max, regExp, whitespace, jump, show, separator, value }) {
+  toSchemaDef ({ words, min, max, regExp, whitespace, jump, show, separator, autocomplete, value }) {
     const seps = (words - 1) * (separator ? 1 : 0)
     return {
       password: {
@@ -24,7 +24,8 @@ export const Schema = {
           whitespace,
           jump,
           show,
-          separator
+          separator,
+          autocomplete
         }
       }
     }

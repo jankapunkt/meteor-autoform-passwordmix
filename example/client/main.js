@@ -22,7 +22,8 @@ const defaultConfig = {
   whitespace: true,
   jump: true,
   show: true,
-  paste: true
+  paste: true,
+  autocomplete: true
 }
 
 const configFormSchema = Schema.create({
@@ -70,6 +71,11 @@ const configFormSchema = Schema.create({
     type: Boolean,
     optional: true,
     defaultValue: defaultConfig.paste
+  },
+  autocomplete: {
+    type: Boolean,
+    optional: true,
+    defaultValue: defaultConfig.autocomplete
   },
   value: {
     type: String,
