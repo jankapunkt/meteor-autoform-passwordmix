@@ -28,6 +28,7 @@ The extensions provides configration for
 * RegExp pattern for each word (default enable all)
 * Whitespace prevention enabled/disabled (default off)
 * Allow or prevent paste on the inputs (default enabled)
+* Enable / disable `autocomplete` (default disabled)
 * Autojumping to next input on typing / to previous input on backspace (default off) (**tbd**)
 
 A full example would therefore look like the following:
@@ -46,7 +47,8 @@ A full example would therefore look like the following:
       whitespace: true,
       jump: true,
       show: true,
-      paste: true
+      paste: true,
+      autocomplete: true
     }
   }
 }
