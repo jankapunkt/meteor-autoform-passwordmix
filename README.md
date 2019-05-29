@@ -64,7 +64,7 @@ $ meteor npm run start
 ```
 
 If you don't use the start script it won't use your latest changes of the `packages` folder.
-
+/***
 ## License
 
 MIT

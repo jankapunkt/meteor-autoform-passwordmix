@@ -67,6 +67,13 @@ const configFormSchema = Schema.create({
     type: Boolean,
     optional: true,
     defaultValue: true
+  },
+  value: {
+    type: String,
+    optional: true,
+    autoform: Object.assign({}, defaultConfig, {
+      type: 'passwordmix'
+    })
   }
 })
 Template.body.onCreated(function () {
@@ -86,7 +93,6 @@ Template.body.helpers({
   },
   passwordDoc () {
     const passwordDoc = Template.instance().state.get('passwordDoc')
-    console.log(passwordDoc)
     return passwordDoc && passwordDoc.password
   }
 })

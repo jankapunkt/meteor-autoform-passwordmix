@@ -40,6 +40,22 @@ Template.afPasswordmix.onCreated(function () {
   })
 })
 
+Template.afPasswordmix.onRendered(function () {
+  const instance = this
+  const data = Template.currentData()
+  const { value } = data
+  if (!value) return
+
+  const { separator } = data.atts
+  instance.$('.afPasswordmix-hiddenInput').val(value)
+  const split = value.split(separator)
+  instance.$('.afPasswordmix-inputField').each(function (index, target) {
+    if (index < split.length) {
+      instance.$(target).val(split[ index ])
+    }
+  })
+})
+
 Template.afPasswordmix.helpers({
   wordInputs () {
     const instance = Template.instance()
