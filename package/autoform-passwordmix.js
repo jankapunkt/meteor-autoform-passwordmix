@@ -135,11 +135,24 @@ Template.afPasswordmix.events({
     const instanceId = templateInstance.data.atts.id
     const state = templateInstance.state.get(instanceId)
     const { paste } = state
+    const { separator } = state
 
-    if (!paste) {
+    if (paste === false) {
       event.preventDefault()
       event.stopPropagation()
+      return
     }
+    let pasteData = (event.originalEvent.clipboardData || window.clipboardData).getData('text');
+    if (pasteData && pasteData.indexOf(separator)) {
+      event.preventDefault()
+      event.stopPropagation()
+      const split = pasteData.split(separator)
+      templateInstance.$('.afPasswordmix-inputField').each(function (index, target) {
+        if (index > split.length - 1) return
+        templateInstance.$(target).val(split[index])
+      })
+    }
+    updateWords(templateInstance)
   },
   'input .afPasswordmix-inputField' (event, templateInstance) {
     updateWords(templateInstance)
