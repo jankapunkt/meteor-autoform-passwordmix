@@ -34,9 +34,6 @@ Template.afPasswordmix.onCreated(function () {
     const iterator = Array.from({ length: atts.words }).map(x => state)
     instance.state.set(atts.id, Object.assign({}, atts, { inputAtts, invalid, iterator }))
 
-    if (invalid) {
-      updateWords(instance)
-    }
   })
 })
 
@@ -73,6 +70,18 @@ Template.afPasswordmix.onRendered(function () {
       }
     })
   }
+
+  // we also want to update the internal structure
+  // if we have any changes on our schema, because
+  // they may affect the words, e.g. regex or schema
+  instance.autorun(() => {
+    const data = Template.currentData()
+    if (data) {
+      setTimeout(() => {
+        updateWords(instance)
+      }, 50)
+    }
+  })
 })
 
 Template.afPasswordmix.helpers({
@@ -136,31 +145,31 @@ Template.afPasswordmix.events({
     const state = templateInstance.state.get(instanceId)
     const { paste } = state
     const { separator } = state
-    const regExp = state.regExp && new RegExp('^' + state.regExp + '$')
+    const regExp = state.regExp && new RegExp('^' + state.regExp + '$', 'g')
 
     if (paste === false) {
       event.preventDefault()
       event.stopPropagation()
       return
     }
-    let pasteData = (event.originalEvent.clipboardData || window.clipboardData).getData('text');
-    if (pasteData && pasteData.indexOf(separator)) {
+    let data = (event.originalEvent.clipboardData || window.clipboardData).getData('text')
+    if (data && data.indexOf(separator)) {
       event.preventDefault()
       event.stopPropagation()
-      const split = pasteData.split(separator)
-      templateInstance.$('.afPasswordmix-inputField').each(function (index, target) {
-        if (index > split.length - 1) return
-        const word = split[index]
-        if (regExp && !regExp.test(word)) {
-          templateInstance.$(target).val(null)
-        } else {
-          templateInstance.$(target).val(word)
-        }
-      })
+      spreadInput({ data, separator, regExp, templateInstance })
     }
     updateWords(templateInstance)
   },
   'input .afPasswordmix-inputField' (event, templateInstance) {
+    const evt = event.originalEvent
+    const { data } = evt
+    if (data && data.length > 1) {
+      const instanceId = templateInstance.data.atts.id
+      const state = templateInstance.state.get(instanceId)
+      const { separator } = state
+      const regExp = state.regExp && new RegExp(state.regExp, 'g')
+      spreadInput({ data, separator, regExp, templateInstance })
+    }
     updateWords(templateInstance)
   }
 })
@@ -174,6 +183,21 @@ function assignError ($target, invalid) {
 function clearError ($target, invalid) {
   if (!invalid) return
   $target.removeClass('border-danger')
+}
+
+function spreadInput ({ data, separator, regExp, templateInstance }) {
+  const split = data.split(separator)
+  if (split.length <= 1) return
+  templateInstance.$('.afPasswordmix-inputField').each(function (index, target) {
+    if (index > split.length - 1) return
+    const word = split[ index ]
+    const passedRegexp = regExp ? regExp.test(word) : true
+    if (!passedRegexp) {
+      templateInstance.$(target).val(null)
+    } else {
+      templateInstance.$(target).val(word)
+    }
+  })
 }
 
 function updateWords (templateInstance) {
@@ -193,7 +217,6 @@ function updateWords (templateInstance) {
   $inputs.each(function (index, value) {
     const $current = templateInstance.$(value)
     const currentWord = $current.val() || ''
-
     // check min if present
     // check max if present
     // check regExp if present
