@@ -136,6 +136,7 @@ Template.afPasswordmix.events({
     const state = templateInstance.state.get(instanceId)
     const { paste } = state
     const { separator } = state
+    const regExp = state.regExp && new RegExp('^' + state.regExp + '$')
 
     if (paste === false) {
       event.preventDefault()
@@ -149,7 +150,12 @@ Template.afPasswordmix.events({
       const split = pasteData.split(separator)
       templateInstance.$('.afPasswordmix-inputField').each(function (index, target) {
         if (index > split.length - 1) return
-        templateInstance.$(target).val(split[index])
+        const word = split[index]
+        if (regExp && !regExp.test(word)) {
+          templateInstance.$(target).val(null)
+        } else {
+          templateInstance.$(target).val(word)
+        }
       })
     }
     updateWords(templateInstance)
